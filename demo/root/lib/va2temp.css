@@ -1,0 +1,745 @@
+/* Vanilla Project templates */
+
+/* Meta objects */
+va2obj {
+	display: flex;
+	margin: auto;
+	border-radius: var(--rounding);
+}
+
+/* Extra objects */
+#va2pageBackground {
+	z-index: 0;
+	opacity: var(--pageBgOp);
+}
+.bgImgLight { background-image: var(--bgImageLight); }
+.bgImgDark { background-image: var(--bgImageDark); }
+
+#va2ctxt {
+	all: unset;
+	z-index: 60;
+	position: absolute;
+	width: 12rem;
+	height: 10.5rem;
+	padding: 0.6rem;
+	background: var(--windowFg);
+	border: 1px solid var(--windowBg);
+	border-radius: var(--corners);
+	overflow: scroll;
+	animation: expandB 0.3s forwards;
+}
+#va2ctxt div {
+	all: unset;
+	display: block;
+	width: 100%;
+	padding: 0.5rem 0.5rem 0.5rem 1rem;
+	margin: 0.2rem 0px;
+	text-align: left;
+	background: var(--windowBg);
+	border-radius: 0.7rem;
+}
+#va2ctxt div:hover {
+	color: var(--fontColorX);
+	background: var(--itemBg);
+}
+
+#va2loginScreen { z-index: 87 }
+#va2loginScreenMask {
+	background: var(--windowBg);
+	opacity: 0.8;
+	transition: opacity 1.5s linear;
+}
+#va2loginScreen:hover #va2loginScreenMask {}
+#va2welcome {
+	width: 90vmin;
+	background: var(--windowFg);
+	border: 1px solid var(--itemBg);
+	border-radius: var(--corners);
+	padding: 1rem 2rem;
+	margin-bottom: 2rem;
+	line-height: 1.3;
+}
+#va2welcome x:first-child {
+	display: inline-block;
+	font-size: 1.5rem;
+	padding-bottom: 0.5rem;
+}
+#va2welcome x:last-child {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	margin-top: 1rem;
+	color: var(--fontColorX);
+	background: var(--itemBg);
+	border-radius: 0.5rem;
+}
+#va2userSelect {
+	margin: auto;
+	width: 60vmin;
+	max-height: 9rem;
+	background: var(--windowFg);
+	border: 1px solid var(--itemBg);
+	border-radius: var(--cornersS);
+	overflow: scroll;
+}
+#va2userSelect div {
+	display: flex;
+	height: 3rem;
+	width: 100%;
+	margin: auto;
+	border-bottom: 1px solid var(--itemBg);
+}
+#va2userSelect div:hover {
+	background: var(--windowBg);
+}
+#va2userSelect div:last-child { border: none }
+
+	/* Loading screen */
+
+.va2loading {
+	z-index: 80;
+	position: fixed;
+	top: 0; left: 0;
+	display: none;
+	background: #0000;
+	animation: loading_frame 3s linear infinite;
+}
+.va2loading p {
+	z-index: 2;
+	color: black;
+	mix-blend-mode: screen;
+	margin: auto auto 4.3rem auto;
+	padding: 3rem;
+	font-size: 1.3rem;
+	background: #fff;
+	border-radius: var(--cornersL);
+	animation: loading_box 1s steps(1, end) infinite;
+	line-height: 2rem;
+}
+.va2loading p span { font-size: 7rem }
+.va2loadCircle {
+	display: flex;
+	flex-wrap: wrap;
+	position: absolute;
+	width: 14rem;
+	height: 14rem;
+	bottom: 4.8rem;
+	left: calc(50% - 7rem);
+	background: red;
+	border-radius: 50%;
+	overflow: hidden;
+	animation: loading_circle 2s linear infinite;
+}
+.va2loadCircle div {
+	width: 50%;
+	height: 50%;
+	margin: auto;
+}
+.va2loadCircle div:nth-child(1) { background: var(--green) }
+.va2loadCircle div:nth-child(2) { background: var(--yellow) }
+.va2loadCircle div:nth-child(3) { background: var(--blue) }
+.va2loadCircle div:nth-child(4) { background: var(--pink) }
+@keyframes loading_box {
+	0%, 100% {
+		border: 0.5rem solid #ddd;
+		border-left: 0.5rem solid var(--green);
+	}
+	25% {
+		border: 0.5rem solid #ddd;
+		border-top: 0.5rem solid var(--yellow);
+	}
+	50% {
+		border: 0.5rem solid #ddd;
+		border-right: 0.5rem solid var(--blue);
+	}
+	75% {
+		border: 0.5rem solid #ddd;
+		border-bottom: 0.5rem solid var(--pink);
+	}
+}
+@keyframes loading_frame {
+	0%, 100% {
+		box-shadow: inset 0rem 0.5rem 0 var(--green);
+	}
+	25% {
+		box-shadow: inset -0.5rem 0rem 0 var(--yellow);
+	}
+	50% {
+		box-shadow: inset -0rem -0.5rem 0 var(--blue);
+	}
+	75% {
+		box-shadow: inset 0.5rem -0rem 0 var(--pink);
+	}
+}
+@keyframes loading_circle {
+	100% { transform: rotate(360deg) }
+}
+
+	/* Behind the desktop */
+
+/* Notifications and status area */
+#va2statusFrame {
+	height: 20%;
+}
+#va2statusFrame #timedate {
+	color: var(--colorFontX);
+}
+
+/* Taskbar */
+#va2taskbarFrame { height: 20%; overflow: hidden }
+#va2taskbarFrame p {
+	margin: 0px;
+	font-size: 3rem;
+	opacity: 0.8;
+}
+#va2taskbar {
+	margin-top: 2rem;
+	height: 7rem;
+	min-width: 7rem;
+	max-width: 95%;
+	padding-right: 1rem;
+	background: var(--windowFg);
+	border: 1px solid var(--itemBg);
+	border-radius: 2rem;
+}
+#va2taskbar div {
+	margin: auto 0px auto 1rem;
+	width: 5rem;
+	height: 5rem;
+}
+#va2taskbar mask {
+	display: flex;
+	border-radius: var(--corners);
+	color: #fff;
+	opacity: 0.9;
+	transition: transform 0.1s
+}
+#va2taskbar div gicon {
+	display: block;
+	margin: auto;
+	font-size: 2.8rem;
+	text-shadow: -4px 6px 2px #0002;
+}
+#va2taskbar mask:nth-child(5n+1) { background-color: var(--green) }
+#va2taskbar mask:nth-child(5n+2) { background-color: var(--yellow) }
+#va2taskbar mask:nth-child(5n+3) { background-color: var(--blue) }
+#va2taskbar mask:nth-child(5n+4) { background-color: var(--pink) }
+#va2taskbar mask:nth-child(5n+5) { background-color: var(--purple) }
+#va2taskbar div:nth-child(2n+1):hover mask {
+	transform: scale(0.95) translateY(-0.3rem) rotate(-7deg);
+}
+#va2taskbar div:nth-child(2n+2):hover mask {
+	transform: scale(0.95) translateY(-0.3rem) rotate(7deg);
+}
+#va2taskbar div p { display: none }
+
+/* Arrow to app list */
+.va2wsScrollTo * {
+	display: block;
+	margin: auto;
+	width: 10rem;
+}
+.va2wsScrollTo gicon {
+	width: 3rem;
+	margin: 0px;
+	transition: color 0.5s;
+}
+.va2wsScrollTo x {
+	margin: auto 0px auto auto;
+	padding-bottom: 0.5rem;
+	text-align: right;
+	font: 600 1.2rem var(--fontCode);
+	letter-spacing: 1px;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+.va2wsScrollTo x:last-child {
+	margin: auto auto auto 0px;
+	text-align: left;
+}
+.va2wsScrollTo:hover gicon {
+	animation: colors_font 5s linear infinite;
+}
+.va2wsScrollTo:hover x { opacity: 0.9 }
+
+/* App list */
+#va2wsApplistFrame { top: 100% }
+#va2applist {
+	min-height: 4rem;
+	width: calc(75vmin + 20vw);
+	margin: 4rem auto;
+	padding: 2rem 0.5rem 0px 0.5rem;
+	background: var(--windowFg);
+	border: 1px solid var(--itemBg);
+	border-radius: var(--cornersL);
+	overflow: unset;
+}
+#va2applist h2 {
+	top: -2.5rem;
+	font: 500 1.5rem var(--fontCode);
+}
+#va2applist .shortcut {
+	width: 4.5rem;
+	height: 4.5rem;
+	margin: 0px 0.4rem 3.4rem 0.4rem;
+}
+#va2applist mask {
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: var(--corners);
+	opacity: 0.9;
+	transition:
+		transform 0.1s,
+		border-radius 0.3s;
+}
+#va2applist .shortcut:hover mask {
+	transform: translateY(-0.4rem);
+	border-radius: 50%;
+}
+#va2applist mask gicon {
+	display: block;
+	margin: auto;
+	font-size: 3rem;
+	color: #fff;
+	text-shadow: -4px 6px 2px #0002;
+}
+#va2applist .shortcut p {
+	position: absolute;
+	top: 110%;
+	max-height: 2.4rem;
+	width: 100%;
+	font-size: 1rem;
+	overflow: hidden;
+}
+#va2applist .bgfill {
+	background-color: var(--windowBg) !important;
+}
+#va2applist .shortcut:nth-child(5n+5) mask { background-color: var(--green) }
+#va2applist .shortcut:nth-child(5n+6) mask { background-color: var(--yellow) }
+#va2applist .shortcut:nth-child(5n+7) mask { background-color: var(--blue) }
+#va2applist .shortcut:nth-child(5n+8) mask { background-color: var(--pink) }
+#va2applist .shortcut:nth-child(5n+9) mask { background-color: var(--purple) }
+#va2applist .shortcut:nth-child(4) mask {
+	background-color: var(--itemFg);
+}
+
+/* Shortcut creation dialogue */
+#va2wsAddShortcut {
+	all: unset;
+	display: flex;
+	flex-wrap: wrap;
+	width: 90vmin;
+	margin: 0px auto 2rem auto;
+	padding: 0.5rem;
+	background: var(--windowBg);
+	border-radius: 3rem;
+	transform: scaleY(0);
+	animation: expandB 0.5s forwards;
+}
+#va2wsAddShortcut h3 {
+	margin: auto;
+	text-align: left;
+	font: 500 1.2rem var(--fontCode);
+	padding: 1rem 2rem;
+}
+#va2wsAddShortcut h3:nth-child(1) {
+	width: 100%;
+	text-align: center;
+	font-size: 1.6rem;
+	color: var(--fontColorX);
+	padding-bottom: 0.3rem;
+}
+#va2wsAddShortcut input {
+	width: 80%;
+	padding: 1rem;
+	background: var(--windowFg);
+	border-radius: 1rem;
+}
+#va2wsAddShortcut p {
+	width: 10rem;
+	margin: 1rem auto;
+	padding: 0.5rem;
+	color: var(--fontColor);
+	border: 2px solid var(--itemFg);
+	border-radius: 1rem;
+}
+#va2wsAddShortcut p:nth-child(2n+2):hover {
+	color: var(--pink);
+	border-color: var(--pink);
+}
+#va2wsAddShortcut p:nth-child(2n+1):hover {
+	color: var(--green);
+	border-color: var(--green);
+}
+#va2wsAddShortcut c {
+	all: unset;
+	display: inline;
+	color: var(--green);
+}
+#va2wsAddShortcut x, #va2wsAddShortcut a {
+	color: var(--pink);
+}
+
+	/* Desktop */
+
+/* Bottom hover */
+#va2expandWorkspace {
+	z-index: 25;
+	width: 60vmin;
+	bottom: 0px;
+	left: calc(50% - 30vmin);
+	height: 0.5rem;
+	background: #0000;
+	border-radius: 2rem 2rem 0 0;
+	transition: background 0.2s;
+}
+#va2expandWorkspace:hover { background: #0002 }
+#va2desktop {
+	overflow: scroll;
+	transition:
+		border-radius 0.25s,
+		transform 0.25s;
+}
+#va2desktop.unfocused {
+	border-radius: 3rem;
+	box-shadow: 0px 0px 4rem #0005;
+	transform: scale(0.6);
+}
+#va2desktop.unfocused:hover {
+	transform: scale(0.61);
+}
+
+/*
+#va2desktop .enabled:nth-child(5n+1) { color: var(--green) }
+#va2desktop .enabled:nth-child(5n+2) { color: var(--yellow) }
+#va2desktop .enabled:nth-child(5n+3) { color: var(--blue) }
+#va2desktop .enabled:nth-child(5n+4) { color: var(--pink) }
+#va2desktop .enabled:nth-child(5n+5) { color: var(--purple) }
+*/
+#btn_settings:hover { color: var(--green) }
+
+/* Shortcuts grid */
+#va2desktopGrid { z-index: 2 }
+
+/* Clocks */
+#timedate {
+	z-index: 1;
+	position: absolute;
+	--va2td_l: unset;
+	--va2td_r: 0;
+	--va2td_t: 0;
+	--va2td_b: unset;
+	left: var(--va2td_l);
+	right: var(--va2td_r);
+	top: var(--va2td_t);
+	bottom: var(--va2td_b);
+	width: 18rem;
+	padding: 0.6rem 1rem;
+}
+#va2desktop #timedate { color: #fff }
+#timedate p {
+	float: right;
+	width: 100%;
+	margin: 0px;
+	text-align: right;
+}
+#time { font: 500 2.5rem var(--fontCode) }
+#date {
+	font: 900 1.1rem var(--fontCode);
+	margin-bottom: 0.3rem;
+}
+#ram, #cpu {
+	font: 700 1.1rem var(--fontCode);
+	line-height: 1.05;
+}
+
+	/* Settings */
+
+/* Window parts */
+#va2settingsFrame {
+	overflow: hidden;
+	margin: auto 0.5rem;
+	width: 95vmin;
+	height: calc(var(--dvh) * 0.92);
+	border-radius: var(--cornersL);
+	background: var(--windowFg);
+}
+
+#va2settingsHead {
+	display: flex;
+	width: 100%;
+	height: 8%;
+	border-bottom: 1px solid var(--windowBg);
+	box-shadow: 0 0.5rem 1rem #0001;
+}
+#va2settingsHead p {
+	width: 5rem;
+	margin: auto 2rem auto auto;
+}
+#conf_back {
+	font-size: 2rem;
+	width: 5rem;
+	margin: auto auto auto 2rem;
+	cursor: pointer;
+}
+#conf_back:hover { color: var(--pink) }
+#conf_title {
+	margin: auto;
+	padding-bottom: 0.1rem;
+}
+
+#va2settingsBody {
+	width: 100%;
+	height: 92%;
+	max-height: 92%;
+}
+#va2settingsBody .page {
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	display: none;
+	overflow: scroll;
+	position: absolute;
+	padding: 0.5rem 0 3rem 0;
+}
+
+/* Datatypes */
+.category, .param {
+	font-size: 1.1rem;
+	text-align: left;
+	width: 95%;
+	overflow: unset;
+	border-radius: var(--corners);
+	transition: 0.2s;
+}
+.category p, .param p {
+	display: block;
+	margin: auto auto auto 1rem;
+}
+.category gicon, .param gicon {
+	display: block;
+	margin: auto 0.6rem;
+	font-size: 2.5rem;
+}
+.category space, .param space {
+	display: block;
+	margin: auto 0.6rem;
+	width: 2.5rem;
+	height: 2.5rem;
+}
+.category info, .param info {
+	z-index: 5;
+	display: none;
+	font-size: 1rem;
+	padding: 0.5rem 1rem;
+	color: var(--fontColorX);
+	background: var(--windowBg);
+	transform: scaleX(0);
+	animation: expandR 0.15s forwards;
+}
+.category:hover info, .param:hover info {
+	display: block;
+}
+.category info:hover, .param info:hover {
+	display: none !important;
+}
+
+.category {
+	font-size: 1.2rem;
+	margin: 1rem 2.5%;
+	overflow: hidden;
+	background: var(--windowBg);
+	border-radius: var(--cornersS);
+}
+.category p { padding: 1.5rem 0 }
+.category:hover {
+	color: var(--fontColorX);
+	background: var(--itemBg);
+}
+.category gicon {
+	margin-right: 1.2rem;
+}
+.category gicon:nth-child(1) {
+	margin-left: 1rem;
+	font-size: 3rem;
+	max-height: 100%;
+	max-width: 2rem;
+}
+
+.param {
+	margin: 0.5rem 2.5%;
+	height: unset;
+	min-height: 1rem;
+	border-radius: 0px;
+	border-left: 2px solid var(--itemFg);
+	border-right: 2px solid var(--itemFg);
+}
+.param:hover { color: var(--fontColorX) }
+.param p {
+	width: 30%;
+	max-width: 30%;
+}
+.param input {
+	min-width: 25vw;
+	width: unset;
+	max-width: 40%;
+	height: 2.3rem;
+	text-indent: 0.5rem;
+	margin: auto 0 auto auto;
+	border-radius: 0.7rem;
+	background: var(--windowBg);
+}
+.param input[type=range] {
+	height: 2px;
+	border: 2px solid var(--itemFg);
+	border-radius: var(--cornersS)
+}
+.param .switch, .param .button {
+	all: unset;
+	display: block;
+	margin: auto 2px;
+	padding: 0.5rem 2rem;
+	background: var(--itemBg);
+	border-radius: var(--cornersS);
+	cursor: pointer;
+}
+.param .button:hover {
+	color: var(--fontColorX);
+	background: var(--itemFg);
+}
+.param .switch.enabled {
+	color: var(--colorMax);
+}
+.param h4 { margin: auto 5px }
+
+.param:nth-child(4n+1) .switch.enabled { background: var(--green) }
+.param:nth-child(4n+2) .switch.enabled { background: var(--yellow) }
+.param:nth-child(4n+3) .switch.enabled { background: var(--blue) }
+.param:nth-child(4n+4) .switch.enabled { background: var(--pink) }
+
+.param:nth-child(4n+1):hover { color: var(--green); border-color: var(--green) }
+.param:nth-child(4n+2):hover { color: var(--yellow); border-color: var(--yellow) }
+.param:nth-child(4n+3):hover { color: var(--blue); border-color: var(--blue) }
+.param:nth-child(4n+4):hover { color: var(--pink); border-color: var(--pink) }
+.param:nth-child(4n+5):hover { color: var(--purple); border-color: var(--purple) }
+
+	/* Window */
+
+/* Window parts */
+#va2windowsFrame { z-index: 3; }
+.va2window {
+	width: calc(100vmin - 0.5rem);
+	height: calc(var(--dvh) * 0.92);
+	margin: auto 0.5rem;
+	background: var(--windowFg);
+	border-radius: var(--corners);
+	border: 1px solid var(--windowBg);
+	overflow: hidden;
+	transition: 0.3s
+}
+.va2windowBody {
+	width: calc(100% - 2px);
+	height: calc(100% - 5rem);
+	margin: 0 auto;
+	overflow: scroll;
+	border: 1px solid var(--windowBg);
+	border-radius: var(--corners);
+	transition: 0.3s
+}
+.va2windowHead, .va2windowFoot {
+	width: 100%;
+	margin: 0;
+	font-size: var(--fontSize);
+}
+.va2windowHead { height: 2.5rem }
+.va2windowFoot { max-height: 2.5rem }
+.va2windowHead x, .va2windowFoot x {
+	display: block;
+	margin: auto;
+}
+.va2windowHead h2 {
+	float: left;
+	margin-left: 1rem;
+	height: 100%;
+	font: 600 1.4rem var(--font);
+}
+
+/* Console parts */
+#va2desktop .console { display: none }
+.va2consoleBody .console { display: block !important }
+.va2consoleBody {
+	padding: 0.5rem 1rem;
+	overflow: scroll;
+	font: 600 1.1rem var(--fontCode);
+}
+.va2consoleBody p {
+	float: left;
+	width: 100%;
+	word-break: break-word;
+	padding: 0px 0px 0.3rem 0px;
+	margin: 0px;
+}
+.va2windowFoot input {
+	all: unset;
+	padding: 0px 1rem;
+	width: 100%;
+	height: 2.5rem;
+	font: 600 1.2rem var(--fontCode);
+	color: var(--fontColor);
+}
+
+/* Window buttons */
+.va2windowMaxBtn, .va2windowMinBtn,
+.va2windowCloseBtn, .va2windowBackBtn {
+	float: right;
+	display: flex;
+	width: 4rem;
+	height: 100%;
+	font-size: 1.3rem;
+	background: #0000;
+	border-left: 1px solid var(--windowBg);
+	transition: background-color 0.25s, color 0.25s;
+}
+.va2windowMinBtn {}
+.va2windowMaxBtn { font-weight: 700 }
+.va2windowCloseBtn {
+	font-weight: 700;
+	border-radius: 0 0 var(--cornersS) 0
+}
+.va2windowMaxBtn:hover {
+	background-color: var(--blue);
+	color: var(--theme);
+}
+.va2windowMinBtn:hover {
+	background-color: var(--yellow);
+	color: var(--theme);
+}
+.va2windowCloseBtn:hover {
+	background-color: var(--pink);
+	color: var(--theme);
+}
+
+	/* Animations */
+
+@keyframes colors_font {
+	0%, 100% { color: var(--green) }
+	25% { color: var(--yellow) }
+	50% { color: var(--blue) }
+	75% { color: var(--pink) }
+}
+@keyframes colors_bg {
+	0%, 100% { background-color: var(--green) }
+	25% { background-color: var(--yellow) }
+	50% { background-color: var(--blue) }
+	75% { background-color: var(--pink) }
+}
+@keyframes colors_frame {
+	0%, 100% { border-color: var(--green) }
+	25% { border-color: var(--yellow) }
+	50% { border-color: var(--blue) }
+	75% { border-color: var(--pink) }
+}
+
+/*	: Code above is licensed under VPCDP  :
+	: by Eimi Rein (霊音 永旻) - @reineimi  :
+	:. https://github.com/reineimi/VPCDP .:  */

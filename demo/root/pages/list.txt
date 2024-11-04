@@ -1,0 +1,4 @@
+home - Home
+api - API
+admin - Admin Page
+admin/pages - Pages
