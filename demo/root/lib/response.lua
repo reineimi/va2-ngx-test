@@ -22,13 +22,6 @@ function task.sh()
 	if arg.v then json.stdout = e.sh(arg.v) end
 end
 
-function task.put()
-	if arg.v then e.put(arg.v) end
-	if arg.f then
-		e.put(e.include(arg.f))
-	end
-end
-
 -- Response logic
 
 if arg.task and task[arg.task] then
