@@ -13,11 +13,10 @@
 
 # Performance (Nov 6, 2024)
 ### Page hop/reload transition animation
-Dark
-![theme_dark](https://github.com/user-attachments/assets/48c75565-e10b-42d3-82fb-85c10c13f35f)
 
-Light
-![theme_light](https://github.com/user-attachments/assets/d8303860-5144-4bb4-9777-b0a275cdd3b0)
+<video src='https://github.com/user-attachments/assets/48c75565-e10b-42d3-82fb-85c10c13f35f' width=300/>
+
+<video src='https://github.com/user-attachments/assets/d8303860-5144-4bb4-9777-b0a275cdd3b0' width=300/>
 
 #
 
