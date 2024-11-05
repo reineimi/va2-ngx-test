@@ -6,7 +6,12 @@ local head = {[[
 <title>Demo</title>
 <meta name='description' content='Sample_text'>
 
-<style>html, body { font-size: 12px; color: #999; background: #333 }</style>
+<style>
+html { font-size: 12px; background: #777 }
+body { animation: slidein 0.5s }
+@keyframes slidein { 0% { opacity: 0; transform: translateX(-100vw) } }
+</style>
+
 <script src='/request.js' defer></script>
 <script src='/va2.js' async defer></script>
 
