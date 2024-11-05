@@ -14,7 +14,7 @@ for item in e.file(conf.root..'/pages/list.txt'):gmatch('(admin/.-)\n') do
 end
 
 return ([[
-	<style>aside { height: 100vh; width: 20rem }</style>
+	<style>aside { width: 20rem }</style>
 	<div><a href='/admin'>Dashboard</a></div>
 	<div class='w h3'>Pages</div>
 	$1

@@ -14,7 +14,9 @@ for item in e.file(conf.root..'/pages/list.txt'):gmatch('(.-)\n') do
 end
 
 local body = [[
-	<div class='w center'>$1</div>
+	<div class='w center' style='flex: 1'>
+		<div class='left tl' style='padding: 0px 4rem; height: 90%'>$1</div>
+	</div>
 ]]
 
 init(body:parse(

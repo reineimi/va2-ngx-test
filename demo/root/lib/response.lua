@@ -14,15 +14,18 @@ end
 
 function task.ping()
 	local out = ''
-	if arg.v then
-		out = ': '..tostring(arg.v)
-	end
+	if arg.v then out = ': '..tostring(arg.v) end
 	json.stdout = 'Request received'..out
 end
 
 function task.sh()
-	if arg.v then
-		json.stdout = e.sh(arg.v)
+	if arg.v then json.stdout = e.sh(arg.v) end
+end
+
+function task.put()
+	if arg.v then e.put(arg.v) end
+	if arg.f then
+		e.put(e.include(arg.f))
 	end
 end
 
