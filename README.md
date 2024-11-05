@@ -11,18 +11,24 @@
 > Tasks for developer(s) to integrate into `/demo` template.
 - Separate `<head>` content for each page
 
+<br>
+<hr>
+
 # Performance (Nov 6, 2024)
-### Page hop/reload transition animation
+## Page hop/reload transition animation
 
 Dark
 <video src='https://github.com/user-attachments/assets/48c75565-e10b-42d3-82fb-85c10c13f35f' width=300/>
-
+#
 Light
 <video src='https://github.com/user-attachments/assets/d8303860-5144-4bb4-9777-b0a275cdd3b0' width=300/>
 
 #
 
-### Benchmarks (Lighthouse) - CPU: 2.665GHz, RAM: 4GB
+## Benchmarks (Lighthouse) - CPU: 2.665GHz, RAM: 4GB
+> With all scripts, styles and fonts loaded
+<br>
+
 Desktop
 ![desktop](https://github.com/user-attachments/assets/bcadf448-c97e-4661-9d78-d6f54910fcae)
 
