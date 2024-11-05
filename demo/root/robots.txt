@@ -17,7 +17,7 @@ User-agent: baiduspider-news
 User-agent: baiduspider-video
 User-agent: slurp
 User-agent: Yandex
-Disallow: /temp
+Disallow: /tmp
 Disallow: /usr
 Disallow: /mod
 Disallow: /lib
@@ -62,7 +62,7 @@ User-agent: Omgilibot
 User-agent: Omgili
 User-agent: YouBot
 User-agent: CCBot
-Disallow: /temp
+Disallow: /tmp
 Disallow: /usr
 Disallow: /mod
 Disallow: /lib
