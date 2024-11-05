@@ -69,6 +69,7 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	backface-visibility: hidden;
+	box-shadow: 1.5rem 2rem 5rem #000d;
 
 	color: var(--fontColor);
 	line-height: 1.2;
