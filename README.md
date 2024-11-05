@@ -18,10 +18,12 @@
 ## Page hop/reload transition animation
 
 Dark
-<video src='https://github.com/user-attachments/assets/48c75565-e10b-42d3-82fb-85c10c13f35f' width=300/>
+<video src='https://github.com/user-attachments/assets/8cecf4cc-5376-4c12-bbea-3312bd15160b' width=300/>
+
 #
+
 Light
-<video src='https://github.com/user-attachments/assets/d8303860-5144-4bb4-9777-b0a275cdd3b0' width=300/>
+<video src='https://github.com/user-attachments/assets/fc9b68ad-2cc5-48af-b98f-7aeedbceee2b' width=300/>
 
 #
 
