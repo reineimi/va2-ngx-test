@@ -3,12 +3,12 @@
 "use strict";
 const va2 = {
 	// Current version of the library, including CSS and other scripts
-	// Example: 0x01020034 == 1.2.34 (major.minor.fixes)
+	// Example: 0x1020000034 == 1.2.34 (major.minor.fixes)
 	// Major = Full project reworks;
 	// Minor = New/changed/renamed functions, styles and/or other stuff
 	// Fixes = Small fixes and changes, update not needed but recommended
-	ver: 0x01040083,
-	verBytes: { major: 0x01000000, minor: 0x010000 },
+	ver: 0x2000000001,
+	verBytes: { major: 0x1000000000, minor: 0x10000000 },
 
 	// Global script/application environment
 	env: { init: [] },
@@ -662,7 +662,7 @@ function emcl(classname) {
 // Return all children of the element by tag
 function tags(root_em_i, tag) {
 	if (emi(root_em_i)) {
-		return [...emi(root_em_i).querySelectorAll(tag)];
+		return [...emi(root_em_i).querySelectorAll(tag.toUpperCase())];
 	} else {
 		em_err('tags',  root_em_i);
 	}
@@ -1444,6 +1444,7 @@ document.addEventListener('touchend', (e)=>{
 	va2.cur.held = 0;
 });
 
+// Theme init
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
 	let theme = event.matches ? 'dark' : 'light';
 	const BODY = document.body;
@@ -1457,7 +1458,15 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (ev
 	log(0,`theme: ${theme}`);
 });
 
-// SCRIPT INIT
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+	rmclass(document.body, 'theme-light');
+	addclass(document.body, 'theme-dark');
+} else {
+	addclass(document.body, 'theme-light');
+	rmclass(document.body, 'theme-dark');
+}
+
+// Script init
 va2.env.init[0] = ()=>{
 	if (!CSS.supports('height: 100dvh')) {
 		document.documentElement.style.setProperty('--dvh', window.innerHeight+'px');
@@ -1465,20 +1474,26 @@ va2.env.init[0] = ()=>{
 	if (typeof twemoji !== 'undefined') {
 		twemoji.parse(document.documentElement, {folder: 'svg', ext: '.svg'});
 	}
-	const BODY = document.body;
-	if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-		rmclass(BODY, 'theme-light');
-		addclass(BODY, 'theme-dark');
-	} else {
-		addclass(BODY, 'theme-light');
-		rmclass(BODY, 'theme-dark');
-	}
+
 	tags(document.body, 'input').loop((_,em)=>{
 		em.spellcheck = undefined;
 	});
+
+	// Page slide effect
+	loop(tags(document.body, 'a'), (_, a)=>{
+		if (a.target !== '__blank') {
+			a.onclick = ()=>{
+				let _min = emi('page_content_min');
+				if (_min) { _min.style.animation = 'none'; }
+				ani('page_content_wrap', 'slideL 0.5s forwards', 0.5, 1);
+				setTimeout(()=>{ href(a.href); }, 300);
+				return false;
+			}
+		}
+	});
 }
 
-// CHECK VERSION
+// Check version
 console.log('Va2 version: 0x'+va2.ver.toString(16));
 if (emi('va2meta')) {
 	let local_ver = emi('va2meta').dataset.ver;

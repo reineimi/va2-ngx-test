@@ -9,6 +9,5 @@ local body = [[
 
 init(body, {
 	header = require 'mod.admin.header',
-	aside = require 'mod.admin.aside',
-	footer = nil
+	aside = require 'mod.admin.aside'
 })
