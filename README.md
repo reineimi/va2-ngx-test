@@ -9,7 +9,7 @@
 
 # Implementation tasks
 > Tasks for developer(s) to integrate into `/demo` template.
-- Separate `<head>` content for each page
+- 
 
 <br>
 <hr>
