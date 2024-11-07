@@ -27,12 +27,22 @@ Light
 
 #
 
-## Benchmarks (Lighthouse) - CPU: 2.665GHz, RAM: 4GB
-> With all scripts, styles and fonts loaded
-<br>
+## Benchmarks (Lighthouse)
+> With all scripts, styles and fonts loaded, including Twemoji and Anicons
+
+### CPU: 2.665GHz, RAM: 4GB
 
 Desktop
 ![desktop](https://github.com/user-attachments/assets/bcadf448-c97e-4661-9d78-d6f54910fcae)
 
 Mobile
 ![mobile](https://github.com/user-attachments/assets/8251b7fe-afee-4b84-adaf-67309d628c39)
+
+### CPU: 3.400GHz, RAM: 8GB
+
+Desktop
+![desktop](https://github.com/user-attachments/assets/2036976f-3ca3-4314-9960-523f00a33bdc)
+
+Mobile
+![mobile](https://github.com/user-attachments/assets/b94fcd03-d604-4126-918d-6001c94e57f7)
+
